@@ -1,7 +1,6 @@
 package nytimes.rohan.com.nytimes.ui;
 
 import android.app.Activity;
-import android.media.Image;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import jp.wasabeef.picasso.transformations.CropTransformation;
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.constants.Constants;
 import nytimes.rohan.com.nytimes.data.NewsData;
@@ -43,14 +40,14 @@ public class NewsDataDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        if (getArguments().containsKey(Constants.ITEM_ID)) {
+        if (getArguments()!=null && getArguments().containsKey(Constants.ITEM_ID)) {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
             data = getArguments().getParcelable(Constants.ITEM_ID);
 
             Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
+            CollapsingToolbarLayout appBarLayout = activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
                 appBarLayout.setTitle(data.getTitle());
             }

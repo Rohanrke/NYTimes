@@ -84,11 +84,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
         ViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.title);
-            content = (TextView) view.findViewById(R.id.content);
-            time = (TextView) view.findViewById(R.id.time);
-            image = (ImageView) view.findViewById(R.id.image);
-            layout = (RelativeLayout) view.findViewById(R.id.parent);
+            title =  view.findViewById(R.id.title);
+            content =  view.findViewById(R.id.content);
+            time = view.findViewById(R.id.time);
+            image =  view.findViewById(R.id.image);
+            layout =  view.findViewById(R.id.parent);
 
         }
     }

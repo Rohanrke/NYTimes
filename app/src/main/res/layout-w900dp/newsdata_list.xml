@@ -26,7 +26,6 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:layoutManager="LinearLayoutManager"
         tools:context="nytimes.rohan.com.nytimes.ui.NewsDataListActivity"
         tools:listitem="@layout/newsdata_list_content" />
 

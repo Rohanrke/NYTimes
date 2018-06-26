@@ -24,7 +24,6 @@
         android:layout_toRightOf="@+id/image"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
-        android:text="rohannaa;a"
         android:textColor="@android:color/black"
         android:layout_toLeftOf="@+id/next"
         android:layout_alignParentTop="true"/>
@@ -35,7 +34,6 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="rohan"
         android:layout_toRightOf="@+id/image"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
@@ -53,7 +51,6 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rohan"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
         android:layout_marginTop="@dimen/text_margin"
@@ -67,7 +64,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@mipmap/arrow"
         android:id="@+id/next"
         android:scaleType="centerCrop"
         android:layout_alignParentRight="true"

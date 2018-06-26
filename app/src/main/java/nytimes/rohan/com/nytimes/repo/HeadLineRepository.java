@@ -14,8 +14,6 @@ import nytimes.rohan.com.nytimes.network.BaseResponse;
 import nytimes.rohan.com.nytimes.network.ConnectionFactory;
 import nytimes.rohan.com.nytimes.utils.Logger;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 @Singleton

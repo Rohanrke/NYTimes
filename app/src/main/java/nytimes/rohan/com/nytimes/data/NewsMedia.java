@@ -59,7 +59,7 @@ public class NewsMedia implements Parcelable {
     protected NewsMedia(Parcel in) {
         this.type = in.readString();
         this.caption = in.readString();
-        this.mediaMetaData = new ArrayList<MediaMetaData>();
+        this.mediaMetaData = new ArrayList<>();
         in.readList(this.mediaMetaData, MediaMetaData.class.getClassLoader());
     }
 
