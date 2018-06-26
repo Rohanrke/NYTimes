@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NYTimes</string>
+    <string name="title_newsdata_list">NewsData</string>
+    <string name="title_newsdata_detail">NewsData Detail</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent"
+    android:padding="@dimen/text_margin">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="rohannaa;a"
+        android:textColor="@android:color/black"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_alignParentTop="true"/>
+
+
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rohan"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/title"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_margin="@dimen/text_margin"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rohan"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/title"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_margin="@dimen/text_margin" />
+
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/next"
+        android:scaleType="centerCrop"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+
+        />
+
+
+</RelativeLayout>
