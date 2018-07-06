@@ -30,11 +30,10 @@ public class NewsDataListActivityTest {
 
 
     @Before
-    public void addData(){
+    public void addData() {
 
 
-
-    }
+        }
 
     @Test
     public void testClickNewsRow(){

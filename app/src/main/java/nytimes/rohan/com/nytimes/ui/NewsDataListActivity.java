@@ -3,6 +3,7 @@ package nytimes.rohan.com.nytimes.ui;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,6 +21,7 @@ import java.util.List;
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.constants.Constants;
 import nytimes.rohan.com.nytimes.data.NewsData;
+import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataListBinding;
 import nytimes.rohan.com.nytimes.ui.delegates.OnNewsClickedListener;
 import nytimes.rohan.com.nytimes.viewmodel.NewsViewModel;
 
@@ -42,24 +44,17 @@ public class NewsDataListActivity extends AppCompatActivity implements OnNewsCli
 
 
     private NewsViewModel viewModel;
-
-    private ProgressBar progressBar;
+    private ActivityNewsdataListBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newsdata_list);
+        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_newsdata_list);
         viewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
-
         viewModel.init();
-
-
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
-        progressBar = findViewById(R.id.progress);
-        progressBar.setVisibility(View.VISIBLE);
+        setSupportActionBar(mBinding.toolbar);
+        mBinding.toolbar.setTitle(getTitle());
+        mBinding.progress.pbrActivityHome.setVisibility(View.VISIBLE);
 
 
         if (findViewById(R.id.newsdata_detail_container) != null) {
@@ -100,7 +95,7 @@ public class NewsDataListActivity extends AppCompatActivity implements OnNewsCli
                 if (newsData!=null) {
                     list.clear();
                     list.addAll(newsData);
-                    progressBar.setVisibility(View.GONE);
+                    mBinding.progress.pbrActivityHome.setVisibility(View.GONE);
                     adapter.notifyDataSetChanged();
 
                 }else {

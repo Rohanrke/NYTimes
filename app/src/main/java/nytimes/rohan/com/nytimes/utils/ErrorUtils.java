@@ -10,8 +10,6 @@ public class ErrorUtils {
 
     }
 
-
-
     public static String parseBaseError(String response){
 
         String errorMsg = null;

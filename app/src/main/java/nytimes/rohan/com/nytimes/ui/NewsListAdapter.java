@@ -1,6 +1,7 @@
 package nytimes.rohan.com.nytimes.ui;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -16,8 +17,11 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+import nytimes.rohan.com.nytimes.BR;
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.data.NewsData;
+import nytimes.rohan.com.nytimes.databinding.NewsdataDetailBinding;
+import nytimes.rohan.com.nytimes.databinding.NewsdataListContentBinding;
 import nytimes.rohan.com.nytimes.ui.delegates.OnNewsClickedListener;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHolder> {
@@ -42,34 +46,17 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.newsdata_list_content, parent, false);
-        return new ViewHolder(view);
+        LayoutInflater layoutInflater =
+                LayoutInflater.from(parent.getContext());
+        NewsdataListContentBinding itemBinding =
+                NewsdataListContentBinding.inflate(layoutInflater, parent, false);
+        return new ViewHolder(itemBinding);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-
-
-        if (!TextUtils.isEmpty(data.get(position).getMedia().get(0).getMediaMetaData().get(0).getUrl())){
-            Picasso.with(context)
-                    .load(data.get(position).getMedia().get(0).getMediaMetaData().get(0).getUrl())
-                    .transform(new CropCircleTransformation())
-                    .into(holder.image);
-         }
-
-
-         holder.title.setText(data.get(position).getTitle());
-        holder.content.setText(data.get(position).getByline());
-        holder.time.setText(data.get(position).getPublishedDate());
-        holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener!=null){
-                    listener.onNewsClicked(position);
-                }
-            }
-        });
+        holder.bind(data.get(position),position);
     }
 
     @Override
@@ -78,18 +65,38 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-         TextView title,content,time;
-         ImageView image;
-         RelativeLayout layout;
 
-        ViewHolder(View view) {
-            super(view);
-            title =  view.findViewById(R.id.title);
-            content =  view.findViewById(R.id.content);
-            time = view.findViewById(R.id.time);
-            image =  view.findViewById(R.id.image);
-            layout =  view.findViewById(R.id.parent);
+         NewsdataListContentBinding mBinding;
 
+        ViewHolder(NewsdataListContentBinding mBinding) {
+            super(mBinding.getRoot());
+            this.mBinding = mBinding;
+
+        }
+
+        public void bind(Object obj,final int position) {
+            if (obj instanceof NewsData) {
+                NewsData data = (NewsData) obj;
+                if (!TextUtils.isEmpty(data.getMedia().get(0).getMediaMetaData().get(0).getUrl())){
+                    Picasso.with(context)
+                            .load(data.getMedia().get(0).getMediaMetaData().get(0).getUrl())
+                            .transform(new CropCircleTransformation())
+                            .into(mBinding.image);
+                }
+
+
+                mBinding.title.setText(data.getTitle());
+                mBinding.content.setText(data.getByline());
+                mBinding.time.setText(data.getPublishedDate());
+                mBinding.parent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (listener != null) {
+                            listener.onNewsClicked(position);
+                        }
+                    }
+                });
+            }
         }
     }
 

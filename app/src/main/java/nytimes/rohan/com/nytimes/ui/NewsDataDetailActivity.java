@@ -1,6 +1,7 @@
 package nytimes.rohan.com.nytimes.ui;
 
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.constants.Constants;
+import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataDetailBinding;
+import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataListBinding;
 
 /**
  * An activity representing a single NewsData detail screen. This
@@ -21,15 +24,14 @@ import nytimes.rohan.com.nytimes.constants.Constants;
  */
 public class NewsDataDetailActivity extends AppCompatActivity {
 
+    private ActivityNewsdataDetailBinding mBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newsdata_detail);
-        Toolbar toolbar =  findViewById(R.id.detail_toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab =  findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_newsdata_detail);
+        setSupportActionBar(mBinding.detailToolbar);
+        mBinding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)

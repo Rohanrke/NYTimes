@@ -1,6 +1,7 @@
 package nytimes.rohan.com.nytimes.ui;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import com.squareup.picasso.Picasso;
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.constants.Constants;
 import nytimes.rohan.com.nytimes.data.NewsData;
+import nytimes.rohan.com.nytimes.databinding.NewsdataDetailBinding;
 
 
 /**
@@ -26,6 +28,9 @@ public class NewsDataDetailFragment extends Fragment {
 
 
     private NewsData data;
+
+    private NewsdataDetailBinding mBnding;
+
 
 
     /**
@@ -65,14 +70,13 @@ public class NewsDataDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.newsdata_detail, container, false);
+        mBnding = DataBindingUtil.inflate(getLayoutInflater(),R.layout.newsdata_detail,container,false);
 
         // Show the dummy content as text in a TextView.
         if (data != null) {
-            ((TextView) rootView.findViewById(R.id.newsdata_detail)).setText(data.getAbst());
-
+            mBnding.newsdataDetail.setText(data.getAbst());
         }
 
-        return rootView;
+        return mBnding.getRoot();
     }
 }
