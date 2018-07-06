@@ -20,9 +20,9 @@ public class NetworkUtils {
      *
      * @return -- true/false depends on availability of internet
      */
-    public static boolean isInternetAvailable() {
+    public static boolean isInternetAvailable(Context context) {
         ConnectivityManager cm =
-                (ConnectivityManager) App.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null &&
