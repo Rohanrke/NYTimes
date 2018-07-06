@@ -13,7 +13,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class ConnectionFactory {
 
-    private static Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
+    private static Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/")
             .addConverterFactory(JacksonConverterFactory.create());
 
 

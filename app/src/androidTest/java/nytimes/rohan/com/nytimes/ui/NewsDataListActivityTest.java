@@ -1,17 +1,13 @@
 package nytimes.rohan.com.nytimes.ui;
 
-import android.app.Instrumentation;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.Espresso;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.runner.AndroidJUnit4;
-
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,7 +21,7 @@ import android.support.test.uiautomator.Until;
 import nytimes.rohan.com.nytimes.R;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;

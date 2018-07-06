@@ -3,9 +3,7 @@ package nytimes.rohan.com.nytimes.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
@@ -14,7 +12,6 @@ import android.view.MenuItem;
 import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.constants.Constants;
 import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataDetailBinding;
-import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataListBinding;
 
 /**
  * An activity representing a single NewsData detail screen. This
@@ -24,12 +21,12 @@ import nytimes.rohan.com.nytimes.databinding.ActivityNewsdataListBinding;
  */
 public class NewsDataDetailActivity extends AppCompatActivity {
 
-    private ActivityNewsdataDetailBinding mBinding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_newsdata_detail);
+        ActivityNewsdataDetailBinding  mBinding = DataBindingUtil.setContentView(this,R.layout.activity_newsdata_detail);
         setSupportActionBar(mBinding.detailToolbar);
         mBinding.fab.setOnClickListener(new View.OnClickListener() {
             @Override

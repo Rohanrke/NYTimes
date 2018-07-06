@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import nytimes.rohan.com.nytimes.App;
 
 
 public class NetworkUtils {

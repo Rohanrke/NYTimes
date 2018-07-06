@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import nytimes.rohan.com.nytimes.R;
@@ -29,7 +28,6 @@ public class NewsDataDetailFragment extends Fragment {
 
     private NewsData data;
 
-    private NewsdataDetailBinding mBnding;
 
 
 
@@ -70,7 +68,7 @@ public class NewsDataDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mBnding = DataBindingUtil.inflate(getLayoutInflater(),R.layout.newsdata_detail,container,false);
+        NewsdataDetailBinding mBnding = DataBindingUtil.inflate(getLayoutInflater(),R.layout.newsdata_detail,container,false);
 
         // Show the dummy content as text in a TextView.
         if (data != null) {

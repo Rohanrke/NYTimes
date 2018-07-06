@@ -1,26 +1,18 @@
 package nytimes.rohan.com.nytimes.ui;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
-import nytimes.rohan.com.nytimes.BR;
-import nytimes.rohan.com.nytimes.R;
 import nytimes.rohan.com.nytimes.data.NewsData;
-import nytimes.rohan.com.nytimes.databinding.NewsdataDetailBinding;
 import nytimes.rohan.com.nytimes.databinding.NewsdataListContentBinding;
 import nytimes.rohan.com.nytimes.ui.delegates.OnNewsClickedListener;
 
@@ -74,7 +66,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
         }
 
-        public void bind(Object obj,final int position) {
+        private void bind(Object obj,final int position) {
             if (obj instanceof NewsData) {
                 NewsData data = (NewsData) obj;
                 if (!TextUtils.isEmpty(data.getMedia().get(0).getMediaMetaData().get(0).getUrl())){

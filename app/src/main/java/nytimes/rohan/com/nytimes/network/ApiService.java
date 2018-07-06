@@ -1,6 +1,5 @@
 package nytimes.rohan.com.nytimes.network;
 
-;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
