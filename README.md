@@ -84,12 +84,19 @@
   espresso for UI tests
   mockito for mocking in tests
 
+# Sonar Report
+
+ ![37e38141](https://user-images.githubusercontent.com/9075512/43061104-7e8bda68-8e71-11e8-8903-ad83bb31dfac.PNG)
+
 # Improvements
   Local caching for fast loading -- Room Architecture / Realm database
   Auto refresh -- swipe pull down to refresh news
   Filters -- save , apply filters such as -- filter by , date, views, article by, popularity etc
           -- sort/ filter by options
   Localization -- news in opted language
+  CI/CD 
+  
+  
 
 
 
