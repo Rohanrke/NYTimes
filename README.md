@@ -39,6 +39,10 @@
 
 
 # Building
+
+  Android studio version -- 3.1.3
+  Java version - 1.8
+  Gradle version - 3.1.3
   You can open the project in Android studio and press run.
   you can build for command line using --
   ./gradlew build
